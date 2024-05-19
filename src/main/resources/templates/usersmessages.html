@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TechIndustry</title>
+</head>
+<body>
+<header>
+    <h1> Messenger </h1>
+</header>
+<h3>List of messages by chosen user: </h3>
+<div th:each="el : ${messages}">
+    <div style="border:solid; border-width:thin; width:600px; word-wrap:break-word;
+        margin:10px; padding-left:20px; padding-right:20px">
+    <b><p th:text="${el.user} + ':'"/></b>
+    <p th:text="${el.text}">
+    </div>
+</div> <br>
+
+<form action="/main">
+    <button type="submit"> Go back to main page </button>
+</form>
+</body>
+</html>
